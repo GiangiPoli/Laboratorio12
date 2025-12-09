@@ -15,6 +15,7 @@ public class LogicsImpl implements Logics {
      *
      * @param size the size of the logics
      */
+
     public LogicsImpl(final int size) {
         this.size = size;
         this.buttons = new LinkedList<>();
@@ -46,7 +47,7 @@ public class LogicsImpl implements Logics {
     @Override
     public List<Boolean> enabledStates() {
         final List<Boolean> enabled = new LinkedList<>();
-        for (Integer value : buttons) {
+        for (final Integer value : buttons) {
             if (value != this.size) {
                 enabled.add(true);
             } else {
