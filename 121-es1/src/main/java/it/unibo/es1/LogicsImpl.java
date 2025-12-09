@@ -46,8 +46,7 @@ public class LogicsImpl implements Logics {
     @Override
     public List<Boolean> enabledStates() {
         final List<Boolean> enabled = new LinkedList<>();
-
-        for (Integer value : values()) {
+        for (Integer value : buttons) {
             if (value != this.size) {
                 enabled.add(true);
             } else {
@@ -63,7 +62,8 @@ public class LogicsImpl implements Logics {
      */
     @Override
     public int hit(final int elem) {
-        return this.buttons.get(elem - 1) + 1;
+        this.buttons.set(elem, this.buttons.get(elem) + 1);
+        return this.buttons.get(elem);
     }
 
     /**
@@ -71,7 +71,7 @@ public class LogicsImpl implements Logics {
      */
     @Override
     public String result() {
-        return enabledStates().toString();
+        return this.buttons.toString();
     }
 
     /**
