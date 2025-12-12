@@ -48,13 +48,8 @@ public class LogicsImpl implements Logics {
     public List<Boolean> enabledStates() {
         final List<Boolean> enabled = new LinkedList<>();
         for (final Integer value : buttons) {
-            if (value != this.size) {
-                enabled.add(true);
-            } else {
-                enabled.add(false);
-            }
+            enabled.add(value != this.size);
         }
-
         return enabled;
     }
 
